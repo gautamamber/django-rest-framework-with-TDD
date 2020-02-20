@@ -6,6 +6,16 @@ from . import models
 class UserAdmin(BaseUserAdmin):
     ordering = ['id']
     list_display = ['email', 'name']
+    fieldsets = (
+        (None, {'fields': ('email', 'password')}),
+
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email','password1', 'password2')
+        }),
+    )
 
 
 admin.site.register(models.User, UserAdmin)
