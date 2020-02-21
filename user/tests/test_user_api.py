@@ -162,7 +162,7 @@ class PrivateUserApiTests(TestCase):
         test updating the user profile for dashboard user
         :return:
         """
-        payload = {'name': 'amber', 'password': 'newpassword123'}
+        payload = {'name': 'name', 'password': 'newpassword123'}
         res = self.client.post(ME_URL, payload)
         self.assertEqual(self.user.name, payload['name'])
         self.assertTrue(self.user.check_password(payload['password']))
